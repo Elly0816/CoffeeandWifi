@@ -1,0 +1,147 @@
+{% extends 'layout.html' %}
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        {% block head %}
+        {{ super() }}
+        {% endblock %}
+
+        {% block title %}
+        {{ name }}
+        {% endblock %}
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        {% block header %}
+        {{ super() }}
+        {% endblock %}
+        
+        {% block content %}
+        <div class="cafe-img" style="background:  url( {{cafe.img_url}} ) ">
+            <div class="cafe-name row">
+                <div class="col-6">
+                    <h1> {{ cafe.name.upper() }} </h1>
+                    <h4> {{ cafe.location.upper() }} </h4>
+                </div>
+                <div class="col-6">
+                    <a class="map" href="{{ cafe.map_url }}">
+                        <i class="fa-solid fa-map-location" style="font-size: 2em; color: white;"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="desc">
+            <div class="row">
+                <div class="col-2">
+                    <h6>Sockets</h6>
+                    <i class="fa-solid fa-plug"></i>
+                    {% if cafe.has_sockets > 0 %}
+                        <p>✅</p>
+                    {% else %}
+                        <p>⛔</p>
+                    {% endif %}
+                    
+                </div>
+                <div class="col-2">
+                    <h6>Restroom</h6>
+                    <i class="fa-solid fa-restroom"></i>
+                    {% if cafe.has_toilet > 0 %}
+                        <p>✅</p>
+                    {% else %}
+                        <p>⛔</p>
+                    {% endif %}
+                    
+                </div>
+                <div class="col-2">
+                    <h6>Wi-Fi</h6>
+                    <i class="fa-solid fa-wifi"></i>
+                    {% if cafe.has_wifi > 0 %}
+                        <p>✅</p>
+                    {% else %}
+                        <p>⛔</p>
+                    {% endif %}
+                    
+                </div>
+                <div class="col-2">
+                    <h6>Calls</h6>
+                    <i class="fa-solid fa-phone"></i>
+                    {% if cafe.can_take_calls > 0 %}
+                        <p>✅</p>
+                    {% else %}
+                        <p>⛔</p>
+                    {% endif %}
+                    
+                </div>
+                <div class="col-2">
+                    <h6>Seats</h6>
+                    <i class="fa-solid fa-chair"></i>
+                    {% if (cafe.seats == '0 - 10') or (cafe.seats == '0-10') %}
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-valuenow="20"
+                            aria-valuemin="0" aria-valuemax="100" style="width:20%">
+                            </div>
+                        </div>
+                    {% elif cafe.seats == ('10-20') or (cafe.seats == '20-30') %}
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="50"
+                            aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                            </div>
+                        </div>
+                    {% elif cafe.seats == '30-40' %}
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" aria-valuenow="80"
+                            aria-valuemin="0" aria-valuemax="100" style="width:80%">
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="100"
+                            aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                            </div>
+                        </div>
+                    {% endif %}
+                    
+                    <p>{{ cafe.seats }}</p>
+                    
+                </div>
+                <div class="col-2">
+                    <h6>Coffee Price</h6>
+                    <i class="fa-solid fa-mug-hot"></i>
+                    <p>{{ cafe.coffee_price }}</p>
+                    
+                </div>
+            </div>
+        </div>
+        <div class='edits'>
+            <a style="float: left;" href="{{ url_for('update', id=cafe.id) }}" class='update'>
+                <button type="button" class="btn btn-warning">Update</button>
+            </a>
+
+            <a style="float: right;" href="{{ url_for('delete', id=cafe.id) }}" class='Delete'>
+                <button type="button" class="btn btn-danger">Delete</button>
+            </a>
+        </div>
+        <div>
+            {% for msg in get_flashed_messages() %}
+            <p style="color: red;">{{ msg }}</p>
+            {% endfor %}
+        </div>
+        
+        {% endblock %}
+
+        {% block footer %}
+        {{ super() }}
+        {% endblock %}
+
+    </body>
+</html>
+

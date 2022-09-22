@@ -1,0 +1,135 @@
+{% extends "layout.html" %}
+
+{% block head %}
+{{ super () }}
+{% endblock %}
+
+{% block title%}Coffee and Wifi {% endblock %}
+
+
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        {% block header %}
+        {{ super ()}}
+        {% endblock %}
+    </header>
+
+    {% block content %}
+    <!-- Intro Div -->
+    <div class="intro">
+        {% for msg in get_flashed_messages() %}
+            <h4 style="color:white;">{{ msg }}</h4>
+        {% endfor %}
+        <h1>LIKE COWORKING, BUT BETTER</h1>
+        <h4>From coffee shops to hotel lobbies, discover everyday places to work and connect.</h4>
+        <a href="{{ url_for('cafes') }}" class="btn btn-warning btn-lg">EXPLORE</a>
+    </div>
+
+    <!-- Info Div -->
+    <div class="info">
+        <div>
+            <i class="fa fa-solid fa-laptop"></i>
+            <h3>BE PRODUCTIVE</h3>
+            <p>Find venues with reliable <strong>Wi-Fi,</strong> ample <strong>power sockets,</strong> and comfy <strong>seating areas.</strong></p>
+        </div>
+
+        <div>
+            <i class="fa fa-regular fa-face-smile"></i>
+            <h3>FEEL WELCOME</h3>
+            <p>Discover the <strong>best times to work,</strong> based on community data</p>
+        </div>
+
+        <div>
+            <i class="fa fa-solid fa-lightbulb"></i>
+            <h3>STAY INSPIRED</h3>
+            <p>Uncover new places with <strong>laid-back ambiance,</strong> and <strong>friendly vibes.</strong></p>
+        </div>
+    </div>
+
+    <div class="hr">
+        <hr>
+    </div>
+
+    <!-- About Div -->
+    <div class="about">
+        <h5>
+            LaptopFriendly partners with local <strong>venues that appreciate and support the remote worker culture.</strong> All locations are carefully inspected and manually approved by our curation team.
+        </h5>
+    </div>
+
+    <div class="hr">
+        <hr>
+    </div>
+
+    <!-- How it works Div -->
+    <h2 class="how">HOW IT WORKS</h2>
+    <div class="how">
+        <div>
+            <img src="https://laptopfriendly.co/assets/landing/map-e3b473419971ff37dcca82995d1d5e88704786ea9c9fe707ab26db1fd0d05bcb.png">
+            <h3>FIND LOCAL WORK HUBS</h3>
+            <p>Quiet? Air conditioned? Well lit? Get stuff done in a fresh, new <strong>environment that's optimized for you</strong>!</p>
+        </div>
+        <div>
+            <img src="https://laptopfriendly.co/assets/landing/community-a5347b785afdf8ded4ce962abe19e86dbab4846c0ac0ec70da4dea08c206c944.jpg">
+            <h3>MEET LIKE-MINDED PEOPLE</h3>
+            <p>Connect with talented <strong>freelancers, digital nomads,</strong> and other <strong>remote workers</strong> sharing our spaces.</p>
+        </div>
+    </div>
+
+    <div class="hr">
+        <hr>
+    </div>
+
+    <!-- Hear it from others div -->
+    <h2 class="hear">HEAR IT FROM OTHERS</h2>
+    <div class="hear">
+        <div>
+            <img src="https://laptopfriendly.co/assets/landing/vuk-nikolic-069e55947349021af2d479c15570516ff0841d81a22ee9013225a9fbfb17053d.jpg">
+            <h6>
+                @WHITEMAN
+            </h6>
+            <small>CEO & Founder - TruckTrack</small>
+            <p><em>"LaptopFriendly is an awesome service for finding places to get your work done. The crew helped me discover some hidden gems all over the city!"</em></p>
+        </div>
+
+        <div>
+            <img src="https://laptopfriendly.co/assets/landing/dunja-lazic-7e3f7dbf9bae496705a2cb1d0ad4506ae95adf44ba71bc6bf96fce6bb2209530.jpg">
+            <h6>
+                @WHITEWOMAN
+            </h6>
+            <small>Media Manager - Toggl</small>
+            <p><em>"It enabled me to find great places to work from and meet new like-minded people. I love the flexibility and the offers at each spot, thanks for making this!"</em></p>
+        </div>
+
+        <div>
+            <img src="https://laptopfriendly.co/assets/landing/mike-oghia-399ba081a07d163c9c5512fe0acc6cb95335c0f04cd2fe9eaa138443c185c3a9.jpg">
+            <h6>
+                @OLIVEMAN
+            </h6>
+            <small>Internet Governance Consultant & Editor</small>
+            <p><em>"Exactly the professional network I’ve been searching for. I can work and socialize with other freelancers while discovering interesting spaces around the city."</em></p>
+        </div>
+    </div>
+
+    <div class="hr">
+        <hr>
+    </div>
+
+    <!-- Get to work div -->
+    <div class="get">
+        <h2 class="get">GET TO WORK!</h2>
+        <a href="{{ url_for('cafes') }}" class="btn btn-lg btn-warning">EXPLORE</a>
+    </div>
+    {% endblock %}
+
+    <!-- Footer -->
+    <footer>
+        {% block footer %}
+        {{ super() }}
+        {% endblock %}
+    </footer>
+
+</body>
+
+</html>

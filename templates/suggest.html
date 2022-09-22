@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+<html>
+    <head>
+        {% block head %}
+        {{ super () }}
+        {% endblock %}
+
+        {% block title %}
+        Suggest
+        {% endblock %}
+    </head>
+
+    <body>
+        <header>
+            {% block header %}
+            {{ super () }}
+            {% endblock %}
+        </header>
+
+        {% block content %}
+        
+
+        <h2 class="how" >ADD NEW CAFE</h2>
+        <div class="how">
+            <p>Let freelancers, digital nomads, and other remote workers know about a new work-friendly cafe!</p>
+            <h4>ADD A NEW CAFE</h4>
+        </div>
+        <div class="col-6" style="text-align: left; margin: auto; line-height: 2em;">
+            {{ wtf.quick_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+            {% for msg in get_flashed_messages() %}
+            <p style="color:red;">{{ msg }}</p>
+            {% endfor %}
+        </div>
+        {% endblock %}
+
+
+        <footer>
+            {% block footer %}
+            {{ super () }}
+            {% endblock %}
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+<html>
+    <head>
+        {% block head %}
+        {{ super () }}
+        {% endblock %}
+
+        {% block title %}
+        {{ word.capitalize() }}
+        {% endblock %}
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        {% block header %}
+        {{ super () }}
+        {% endblock %}
+        
+
+        {% block content %}
+        <h2 class="how">{{ word.upper() }}</h2>
+        
+            {% if current_user.is_authenticated %}
+                <div class="col-6 form" style="justify-content:center; align-items:center; text-align: center; margin: auto; line-height: 2em; display:flex;">
+                    <form action="{{ url_for('logout') }}" method="post">
+                        <button type='submit' class='btn btn-primary btn-lg'>Logout</button>
+                    </form>
+                </div>
+            {% else %}
+                <div class="col-6 form" style="text-align: left; margin: auto; line-height: 2em;">
+                    {{ wtf.quick_form(form, novalidate=True, button_map={"register": "primary", "login":"primary"}) }}
+                    {% for msg in get_flashed_messages() %}
+                    <p style="color:red;">{{ msg }}</p>
+                    {% endfor %}
+                    {% if word != 'Sign Up' %}
+                    <hr>
+                    <p>Not registered?</p>
+                    <a href="{{ url_for('register') }}"><p>Sign Up Here</p></a>
+                    {% endif %}
+                </div>
+                {% endif %}
+       
+        
+        {% endblock %}
+
+        {% block footer %}
+        {{ super () }}
+        {% endblock %}
+    </body>
+</html>

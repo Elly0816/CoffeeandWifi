@@ -1,0 +1,330 @@
+body {
+    padding-top: 60px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+
+/*---NavBar---*/
+
+.navbar-text b {
+    font-size: 100%;
+    margin-left: 10px;
+}
+
+.navbar-text {
+    display: inline-block;
+    width: 100%;
+    margin: auto;
+    text-align: left;
+}
+
+.coffee_wifi_logo {
+    max-height: 1.7em;
+    filter: invert(100%);
+}
+
+.navbar-text p {
+    margin-left: 10px;
+    float: right;
+}
+
+.earth_logo {
+    float: right;
+    max-height: 1.7em;
+    padding: 0.1em 0.5em;
+    margin: 0 0.5em;
+    filter: invert(100%);
+}
+
+
+/* Intro Div */
+
+.intro {
+    padding: 3em 10.5em;
+    color: beige;
+    height: 700px;
+    background: url(../static/coffeeshopwork.jpg);
+    background-size: cover;
+}
+
+.intro h1 {
+    margin: 0.5em auto;
+    /* min-width: 10em; */
+    max-width: 10em;
+    font-weight: bolder;
+    font-size: 300%;
+}
+
+.intro h4 {
+    margin: 0.5em auto 3em;
+    max-width: 17em;
+    align-self: center;
+}
+
+
+/* Info Div */
+
+.info {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    padding: 10% 7.5%;
+}
+
+.info i {
+    font-size: 2em;
+    padding-bottom: 5%;
+}
+
+.info div {
+    display: table-cell;
+    margin: 0 10%;
+    padding: auto 10em;
+}
+
+.info p {
+    max-width: 13em;
+    margin: 1.5rem auto;
+}
+
+.hr {
+    width: 80%;
+    margin: auto;
+}
+
+
+/* About Div */
+
+.about h5 {
+    max-width: 20em;
+    line-height: 1.5em;
+    margin: 5em auto;
+}
+
+
+/* How it works Div */
+
+.how {
+    width: 80%;
+    display: table;
+    padding-bottom: 1em;
+    margin: 2em auto 0;
+    table-layout: fixed;
+    z-index: -1;
+}
+
+.how div {
+    display: table-cell;
+    padding: auto 10em;
+    margin: 0 5em;
+}
+
+.how img {
+    width: 85%;
+    max-width: fit-content;
+    margin: 0 10%;
+}
+
+.how h3 {
+    margin: 1em auto;
+    max-width: 90%;
+}
+
+.how p {
+    max-width: 80%;
+    margin: auto;
+    padding-bottom: 5em
+}
+
+
+/* Hear it from others div */
+
+.hear {
+    display: table;
+    margin: 2em auto 0;
+    width: 80%;
+    padding-bottom: 1em;
+    table-layout: fixed;
+}
+
+.hear div {
+    display: table-cell;
+    padding: 0 1em 0;
+}
+
+.hear img {
+    border-radius: 100%;
+    max-width: 6em;
+    margin-bottom: 2em;
+}
+
+
+/* Get to work div */
+
+.get {
+    width: 80%;
+    display: table;
+    padding-bottom: 1em;
+    margin: 2em auto 0;
+}
+
+
+/* Footer */
+
+footer {
+    background-color: rgb(31, 30, 30);
+    color: white;
+    margin-top: 10px;
+}
+
+footer div {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    padding: 1.5em 3em;
+}
+
+footer p {
+    display: table-cell;
+}
+
+footer .icons {
+    display: inline;
+    max-width: 2em;
+}
+
+.icons i {
+    padding: 0.5em;
+    color: white;
+}
+
+.more p {
+    display: inline;
+    padding: 0.5em;
+    color: white;
+}
+
+.get a {
+    margin: 3em auto;
+}
+
+
+/* For cafes html */
+
+.name {
+    background-color: white;
+    margin: 50px 0 0 10px;
+    text-align: left;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.cafes {
+    width: 100%;
+    margin-top: 150px;
+    position: relative;
+    text-align: left;
+}
+
+div.name {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin-left: -12px;
+}
+
+.cafes p {
+    padding-bottom: 20px;
+    text-align: left;
+    margin: 0;
+}
+
+.filters {
+    padding-top: 1em;
+    margin: 0;
+    text-align: left;
+}
+
+.parent {
+    overflow: hidden;
+    margin-top: 50px;
+    display: inline-block;
+    padding-left: 1em;
+}
+
+.left {
+    overflow: auto;
+    position: relative;
+    overscroll-behavior: contain;
+    height: 100%;
+}
+
+.right {
+    position: relative;
+    overflow: auto;
+    overscroll-behavior: contain;
+}
+
+.icons div {
+    display: inline-block;
+    padding: 1em;
+}
+
+.icons a {
+    color: black;
+}
+
+
+/*For individual cafe pages*/
+
+.cafe-img {
+    color: white;
+    background-size: cover !important;
+    position: relative;
+    height: 700px;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+
+.cafe-name {
+    position: absolute;
+    margin: 2em 2em;
+    bottom: 0;
+    width: 100%;
+}
+
+.cafe-name h1,
+.cafe-name h4 {
+    text-align: left;
+    padding-left: 1rem;
+}
+
+.cafe-name a {
+    text-align: right;
+}
+
+.map {
+    float: right;
+}
+
+.desc {
+    padding: 1em;
+    line-height: 2em;
+}
+
+.edits {
+    position: relative;
+    padding: 2em 40%;
+}
+
+
+/* Register/Login Form*/
+
+.form {
+    padding-bottom: 11em;
+}
